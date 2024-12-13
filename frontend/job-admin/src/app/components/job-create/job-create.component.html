@@ -1,0 +1,119 @@
+<div class="container m-5">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <form [formGroup]="jobFormGroup" (ngSubmit)="onSubmit()">
+                <div formGroupName="job">
+                    <h2>Add New Job Details</h2>
+                    <hr />
+                    <!-- category control -->
+                    <div class="my-3">
+                        <label class="form-label">Category :</label>
+                        <select formControlName="category" class="form-control">
+                            <option *ngFor="let jobCategory of jobCategories" [ngValue]="jobCategory">
+                                {{ jobCategory.jobCategoryName }}
+                            </option>
+                        </select>
+                        <div *ngIf="
+                  category?.invalid && (category?.touched || category?.dirty)
+                " class="alert alert-danger">
+                            <div *ngIf="category?.errors?.['required']">
+                                Category  is required
+                            </div>
+                        </div>
+                    </div>
+                    <!-- category control ended-->
+
+                    <!-- jobTitle control-->
+                    <div class="my-3">
+                        <label class="form-label">Job Title: </label>
+                        <input type="text" class="form-control" formControlName="jobTitle" />
+                        <div *ngIf="jobTitle?.invalid && (jobTitle?.touched || jobTitle?.dirty)"
+                            class="alert alert-danger">
+                            <div *ngIf="jobTitle?.errors?.['required']">Job Title is required</div>
+                        </div>
+                    </div>
+                    <!-- job title control ended-->
+
+                    <!-- job description control-->
+                    <div class="my-3">`
+                        <label class="form-label">Job Description: </label>
+                        <input type="text" class="form-control" formControlName="jobDescription" />
+                        <div *ngIf="
+                  jobDescription?.invalid &&
+                  (jobDescription?.touched || jobDescription?.dirty)
+                " class="alert alert-danger">
+                            <div *ngIf="jobDescription?.errors?.['required']">
+                                Job description is required
+                            </div>
+                        </div>
+                    </div>
+                    <!-- job description control ended-->
+
+                    <!-- job location control-->
+                    <div class="my-3">`
+                        <label class="form-label">Job Location: </label>
+                        <input type="text" class="form-control" formControlName="jobLocation" />
+                        <div *ngIf="
+                  jobLocation?.invalid &&
+                  (jobLocation?.touched || jobLocation?.dirty)
+                " class="alert alert-danger">
+                            <div *ngIf="jobLocation?.errors?.['required']">
+                                Job location is required
+                            </div>
+                        </div>
+                    </div>
+                    <!-- job location control ended-->
+                    <!-- job salary control-->
+                    <div class="my-3">`
+                        <label class="form-label">Job Salary: </label>
+                        <input type="text" class="form-control" formControlName="jobSalary" />
+                        <div *ngIf="
+                  jobSalary?.invalid &&
+                  (jobSalary?.touched || jobSalary?.dirty)
+                " class="alert alert-danger">
+                            <div *ngIf="jobSalary?.errors?.['required']">
+                                Job salary is required
+                            </div>
+                        </div>
+                    </div>
+                    <!-- job salary control ended-->
+
+                    <!-- job qualification control-->
+                    <div class="my-3">`
+                        <label class="form-label">Job Qualification: </label>
+                        <input type="text" class="form-control" formControlName="jobQualification" />
+                        <div *ngIf="
+                  jobQualification?.invalid &&
+                  (jobQualification?.touched || jobQualification?.dirty)
+                " class="alert alert-danger">
+                            <div *ngIf="jobQualification?.errors?.['required']">
+                                Job qualification is required
+                            </div>
+                        </div>
+                    </div>
+                    <!-- job qualification control ended-->
+
+                    <!-- job type control-->
+                    <div class="my-3">`
+                        <label class="form-label">Job Type: </label>
+                        <input type="text" class="form-control" formControlName="jobType" />
+                        <div *ngIf="
+                  jobType?.invalid &&
+                  (jobType?.touched || jobType?.dirty)
+                " class="alert alert-danger">
+                            <div *ngIf="jobType?.errors?.['required']">
+                                Job type is required
+                            </div>
+                        </div>
+                    </div>
+                    <!-- job type control ended-->
+                </div>
+
+                <!-- submit button-->
+                <div class="d-grid">
+                    <input type="submit" value="Add New Job" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

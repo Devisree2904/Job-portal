@@ -1,0 +1,47 @@
+<div class="m-5">
+    <table class="table table-borded table-striped">
+        <thead>
+            <tr>
+              <th>OPTIONS</th>
+                <th>EMPLOYER ID</th>
+                <th>EMPLOYER NAME</th>
+                <th>EMPLOYER EMAIL</th>
+                <th>EMPLOYER PASSWORD</th>
+                <th>EMPLOYER MOBILE</th>
+                <th>PERSONAL ADDRESS</th>
+                <th>OFFICE ADDRESS</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let jobEmployer of jobEmployers">
+                <td>
+                    <button
+                      class="btn btn-danger"
+                      (click)="removeEmployer(jobEmployer.employerId)"
+                    >
+                      Delete
+                    </button>
+                    <button
+                      class="btn btn-success"
+                      (click)="showJobEmployerEdit(jobEmployer.employerId)"
+                    >
+                      Edit
+                    </button>
+                </td>
+                <td>{{ jobEmployer.employerId }}</td>
+                <td>{{ jobEmployer.employerName }}</td>
+                <td>{{ jobEmployer.employerEmail}}</td>
+                <td>{{ jobEmployer.employerPassword}}</td>
+                <td>{{ jobEmployer.employerMobile}}</td>
+                <td>{{ jobEmployer.personalAddress}}</td>
+                <td>{{ jobEmployer.officeAddress}}</td>
+            </tr>
+            <tr *ngIf="!jobEmployers || jobEmployers. length ==0">
+                <td colspan="3">No data available</td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>

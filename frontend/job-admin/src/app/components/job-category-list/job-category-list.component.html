@@ -1,0 +1,29 @@
+<div class="m-5">
+  <table class="table table-borded table-striped">
+    <thead>
+      <tr>
+        <th>OPTIONS</th>
+        <th>CATEGORY ID</th>
+        <th>JOB CATEGORY NAME</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let jobCategory of jobCategories">
+        <td>
+          <button class="btn btn-danger" (click)="removeCategory(jobCategory.categoryId)">
+            Delete
+          </button>
+          <button class="btn btn-success" (click)="showJobCategoryEdit(jobCategory.categoryId)">
+            Edit
+          </button>
+        </td>
+        <td>{{ jobCategory.categoryId }}</td>
+        <td>{{ jobCategory.jobCategoryName }}</td>
+      </tr>
+      <tr *ngIf="!jobCategories || jobCategories. length ==0">
+        <td colspan="3">No data available</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,109 @@
+<div class="container m-5">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <form [formGroup]="employerFormGroup" (ngSubmit)="onSubmit()">
+                <h2>Add New Job Employer Details</h2>
+                <hr />
+                <div formGroupName="employer">
+
+                    <!--employer name control-->
+                    <div class="my-3">
+                        <label for="" class="form-label">Employer Name: </label>
+                        <input type="text" class="form-control" formControlName="employerName" />
+                        <div class="alert alert-danger" *ngIf="
+                  employerName?.invalid && (employerName?.touched || employerName?.dirty)">
+                            <div *ngIf="employerName?.errors?.['required']">
+                                Employer name is required
+                            </div>
+                            <div *ngIf="employerName.errors?.['pattern']">
+                                Employer name is Invalid
+                            </div>
+                        </div>
+                    </div>
+                    <!--employer name control ended-->
+
+                    <!--employer email control-->
+                    <div class="my-3">
+                        <label for="" class="form-label">Employer Email: </label>
+                        <input type="text" class="form-control" formControlName="employerEmail" />
+                        <div class="alert alert-danger" *ngIf="
+                  employerEmail?.invalid && (employerEmail?.touched || employerEmail?.dirty)">
+                            <div *ngIf="employerEmail?.errors?.['required']">
+                                Employer email is required
+                            </div>
+                            <div *ngIf="employerEmail.errors?.['pattern']">
+                                Employer email is Invalid
+                            </div>
+                        </div>
+                    </div>
+                    <!--employer email control ended-->
+                    <!--employer password control-->
+                    <div class="my-3">
+                        <label for="" class="form-label">Employer Password: </label>
+                        <input type="text" class="form-control" formControlName="employerPassword" />
+                        <div class="alert alert-danger" *ngIf="
+                  employerPassword?.invalid && (employerPassword?.touched || employerPassword?.dirty)">
+                            <div *ngIf="employerPassword?.errors?.['required']">
+                                Employer password is required
+                            </div>
+                            <div *ngIf="employerPassword.errors?.['pattern']">
+                                Employer password is Invalid
+                            </div>
+                        </div>
+                    </div>
+                    <!--employer password control ended-->
+                    <!--employer Mobile control-->
+                    <div class="my-3">
+                        <label for="" class="form-label">Employer Mobile: </label>
+                        <input type="text" class="form-control" formControlName="employerMobile" />
+                        <div class="alert alert-danger" *ngIf="
+                  employerMobile?.invalid && (employerMobile?.touched || employerMobile?.dirty)">
+                            <div *ngIf="employerMobile?.errors?.['required']">
+                                Employer mobile is required
+                            </div>
+                            <div *ngIf="employerMobile.errors?.['pattern']">
+                                Employer mobile is Invalid
+                            </div>
+                        </div>
+                    </div>
+                    <!--employer mobile control ended-->
+                    <!--personal address control-->
+                    <div class="my-3">
+                        <label for="" class="form-label">Personal Address: </label>
+                        <input type="text" class="form-control" formControlName="personalAddress" />
+                        <div class="alert alert-danger" *ngIf="
+                  personalAddress?.invalid && (personalAddress?.touched || personalAddress?.dirty)">
+                            <div *ngIf="personalAddress?.errors?.['required']">
+                                Personal address is required
+                            </div>
+                            <div *ngIf="personalAddress.errors?.['pattern']">
+                                Personal address is Invalid
+                            </div>
+                        </div>
+                    </div>
+                    <!--personal address control ended-->
+
+                    <!--office address control-->
+                    <div class="my-3">
+                        <label for="" class="form-label">Office Address: </label>
+                        <input type="text" class="form-control" formControlName="officeAddress" />
+                        <div class="alert alert-danger" *ngIf="
+                  officeAddress?.invalid && (officeAddress?.touched || officeAddress?.dirty)">
+                            <div *ngIf="officeAddress?.errors?.['required']">
+                                Office address is required
+                            </div>
+                            <div *ngIf="officeAddress.errors?.['pattern']">
+                                Office address is Invalid
+                            </div>
+                        </div>
+                    </div>
+                    <!--office address control ended-->
+                </div>
+                <!-- submit button -->
+                <div class="d-grid">
+                    <input type="submit" value="Add Employer" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

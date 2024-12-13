@@ -1,0 +1,34 @@
+<div class="m-5">
+    <table class="table table-borded table-striped">
+        <thead>
+            <tr>
+                <th>OPTIONS</th>
+                <th>Application ID</th>
+                <th>Applicant Name</th>
+                <th>Application Email</th>
+                <th>Applicant Phone</th>
+                <th>Resume Path</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let jobApplication of jobApplications">
+                <td>
+                    <button class="btn btn-danger" (click)="removeApplication(jobApplication.applicationId)">
+                        Delete
+                    </button>
+                    <button class="btn btn-success" (click)="showJobApplicationEdit(jobApplication.applicationId)">
+                        Edit
+                    </button>
+                </td>
+                <td>{{ jobApplication.applicationId }}</td>
+                <td>{{ jobApplication.applicantName }}</td>
+                <td>{{ jobApplication.applicantEmail }}</td>
+                <td>{{ jobApplication.applicantPhone }}</td>
+                <td>{{ jobApplication.resumePath }}</td>
+            </tr>
+            <tr *ngIf="!jobApplications || jobApplications. length ==0">
+                <td colspan="3">No data available</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

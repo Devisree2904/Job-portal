@@ -1,0 +1,26 @@
+<div class="table-responsive m-5">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>JOB ID</th>
+                <th>JOB TITLE</th>
+                <th>JOB DESCRIPTION</th>
+                <th>JOB LOCATION</th>
+                <th>JOB SALARY</th>
+                <th>JOB QUALIFICATION</th>
+                <th>JOB TYPE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let job of jobs">
+                <td>{{job.jobId}}</td>
+                <td>{{job.jobTitle}}</td>
+                <td>{{job.jobDescription}}</td>
+                <td>{{job.jobLocation}}</td>
+                <td>{{job.jobSalary}}</td>
+                <td>{{job.jobQualification}}</td>
+                <td>{{job.jobType}}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>

@@ -1,0 +1,80 @@
+<div class="container m-5">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <form [formGroup]="applicationFormGroup" (ngSubmit)="onSubmit()">
+                <h2>Add New Job Application Details</h2>
+                <hr />
+                <div formGroupName="application">
+
+                    <!--applicant name control-->
+                    <div class="my-3">
+                        <label for="" class="form-label">Applicant Name: </label>
+                        <input type="text" class="form-control" formControlName="applicantName" />
+                        <div class="alert alert-danger" *ngIf="
+                  applicantName?.invalid && (applicantName?.touched || applicantName?.dirty)">
+                            <div *ngIf="applicantName?.errors?.['required']">
+                                Applicant name is required
+                            </div>
+                            <div *ngIf="applicantName.errors?.['pattern']">
+                                Applicant name is Invalid
+                            </div>
+                        </div>
+                    </div>
+                    <!--applicant name control ended-->
+
+                    <!--applicant email control-->
+                    <div class="my-3">
+                        <label for="" class="form-label">Applicant Email: </label>
+                        <input type="text" class="form-control" formControlName="applicantEmail" />
+                        <div class="alert alert-danger" *ngIf="
+                                  applicantEmail?.invalid && (applicantEmail?.touched || applicantEmail?.dirty)">
+                            <div *ngIf="applicantEmail?.errors?.['required']">
+                                Applicant email is required
+                            </div>
+                            <div *ngIf="applicantEmail.errors?.['pattern']">
+                                Applicant email is Invalid
+                            </div>
+                        </div>
+                    </div>
+                    <!--applicant email control ended-->
+
+                    <!--applicant phone control-->
+                    <div class="my-3">
+                        <label for="" class="form-label">Applicant Phone: </label>
+                        <input type="text" class="form-control" formControlName="applicantPhone" />
+                        <div class="alert alert-danger" *ngIf="
+                  applicantPhone?.invalid && (applicantPhone?.touched || applicantphone?.dirty)">
+                            <div *ngIf="applicantPhone?.errors?.['required']">
+                                Applicant phone is required
+                            </div>
+                            <div *ngIf="applicantPhone.errors?.['pattern']">
+                                Applicant phone is Invalid
+                            </div>
+                        </div>
+                    </div>
+                    <!--applicant phone control ended-->
+
+                    <!--resume path control-->
+                    <div class="my-3">
+                        <label for="" class="form-label">Resume Path: </label>
+                        <input type="text" class="form-control" formControlName="resumePath" />
+                        <div class="alert alert-danger" *ngIf="
+                                      resumePath?.invalid && (resumePath?.touched || resumePath?.dirty)">
+                            <div *ngIf="resumePath?.errors?.['required']">
+                                Resume path is required
+                            </div>
+                            <div *ngIf="resumePath.errors?.['pattern']">
+                                Resume path is Invalid
+                            </div>
+                        </div>
+                    </div>
+                    <!--resume path control ended-->
+                </div>
+                <!-- submit button -->
+                <div class="d-grid">
+                    <input type="submit" value="Add Application" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
